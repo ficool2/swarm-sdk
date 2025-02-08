@@ -38,6 +38,11 @@ public:
 	virtual void Disconnect( bool bIsMaterialSystem );
 	virtual void InsertShader( IShader *pShader );
 
+#ifdef GAME_L4D2
+	virtual int ShaderComboSemanticsCount();
+	virtual ShaderComboSemantics_t* GetComboSemantics( int nCombo );
+#endif
+
 private:
 	CUtlVector< IShader * >	m_ShaderList;
 };
@@ -167,3 +172,16 @@ void CShaderDLL::InsertShader( IShader *pShader )
 	m_ShaderList.AddToTail( pShader );
 }
 
+#ifdef GAME_L4D2
+int CShaderDLL::ShaderComboSemanticsCount()
+{
+	// TODO
+	return 0;
+}
+
+ShaderComboSemantics_t* CShaderDLL::GetComboSemantics( int nCombo )
+{
+	// TODO
+	return nullptr;
+}
+#endif

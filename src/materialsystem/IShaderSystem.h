@@ -24,7 +24,7 @@
 enum Sampler_t;
 class ITexture;
 class IShader;
-
+struct ShaderComboSemantics_t;
 
 //-----------------------------------------------------------------------------
 // The Shader system interface version
@@ -79,6 +79,10 @@ public:
 
 	// Bind vertex texture
 	virtual void BindVertexTexture( VertexTextureSampler_t vtSampler, ITexture *pTexture, int nFrameVar = 0 ) = 0;
+
+#ifdef GAME_L4D2
+	virtual void AddShaderComboInformation( const ShaderComboSemantics_t *pSemantics ) = 0;
+#endif
 };
 
 
@@ -103,6 +107,11 @@ public:
 
 	// Returns information about each shader defined in this DLL
 	virtual IShader *GetShader( int nShader ) = 0;
+
+#ifdef GAME_L4D2
+	virtual int ShaderComboSemanticsCount() = 0;
+	virtual ShaderComboSemantics_t* GetComboSemantics( int nCombo ) = 0;
+#endif
 };
 
 

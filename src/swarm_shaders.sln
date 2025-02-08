@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "shaderlib", "materialsystem\shaderlib\shaderlib_sdk.vcxproj", "{1A1149D9-CB1B-BF85-19CA-C9C2996BFDE8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "game_shader_dx9", "materialsystem\stdshaders\game_shader_dx9.vcxproj", "{F66B846C-A03B-41B0-90FE-DB614F60258C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1A1149D9-CB1B-BF85-19CA-C9C2996BFDE8} = {1A1149D9-CB1B-BF85-19CA-C9C2996BFDE8}
+		{D8A3A0F0-7E51-4B66-A6BE-BE6AA5CF0A2D} = {D8A3A0F0-7E51-4B66-A6BE-BE6AA5CF0A2D}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tier1", "tier1\tier1.vcxproj", "{D8A3A0F0-7E51-4B66-A6BE-BE6AA5CF0A2D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A1149D9-CB1B-BF85-19CA-C9C2996BFDE8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1A1149D9-CB1B-BF85-19CA-C9C2996BFDE8}.Debug|Win32.Build.0 = Debug|Win32
+		{1A1149D9-CB1B-BF85-19CA-C9C2996BFDE8}.Release|Win32.ActiveCfg = Release|Win32
+		{1A1149D9-CB1B-BF85-19CA-C9C2996BFDE8}.Release|Win32.Build.0 = Release|Win32
+		{F66B846C-A03B-41B0-90FE-DB614F60258C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F66B846C-A03B-41B0-90FE-DB614F60258C}.Debug|Win32.Build.0 = Debug|Win32
+		{F66B846C-A03B-41B0-90FE-DB614F60258C}.Release|Win32.ActiveCfg = Release|Win32
+		{F66B846C-A03B-41B0-90FE-DB614F60258C}.Release|Win32.Build.0 = Release|Win32
+		{D8A3A0F0-7E51-4B66-A6BE-BE6AA5CF0A2D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D8A3A0F0-7E51-4B66-A6BE-BE6AA5CF0A2D}.Debug|Win32.Build.0 = Debug|Win32
+		{D8A3A0F0-7E51-4B66-A6BE-BE6AA5CF0A2D}.Release|Win32.ActiveCfg = Release|Win32
+		{D8A3A0F0-7E51-4B66-A6BE-BE6AA5CF0A2D}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

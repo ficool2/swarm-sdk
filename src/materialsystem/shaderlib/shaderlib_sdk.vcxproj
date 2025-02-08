@@ -57,7 +57,7 @@
       <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\..\common;..\..\public;..\..\public\tier0;..\..\public\tier1;..\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WIN32;_DEBUG;DEBUG;_LIB;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll;COMPILER_MSVC32;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll;COMPILER_MSVC;_DLL_EXT=.dll;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll;LIBNAME=shaderlib;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll;FAST_MATERIALVAR_ACCESS;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GAME_L4D2;WIN32;_WIN32;_DEBUG;DEBUG;_LIB;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll;COMPILER_MSVC32;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll;COMPILER_MSVC;_DLL_EXT=.dll;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll;LIBNAME=shaderlib;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll;FAST_MATERIALVAR_ACCESS;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <MinimalRebuild>true</MinimalRebuild>
       <ExceptionHandling>
@@ -116,7 +116,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <AdditionalIncludeDirectories>..\..\common;..\..\public;..\..\public\tier0;..\..\public\tier1;..\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll;COMPILER_MSVC32;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll;COMPILER_MSVC;_DLL_EXT=.dll;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll;LIBNAME=shaderlib;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll;FAST_MATERIALVAR_ACCESS;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GAME_L4D2;WIN32;_WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll;COMPILER_MSVC32;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll;COMPILER_MSVC;_DLL_EXT=.dll;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll;LIBNAME=shaderlib;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll;FAST_MATERIALVAR_ACCESS;VPCGAME=swarm;VPCGAMECAPS=SWARM;_DLL_EXT=.dll;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <ExceptionHandling>
       </ExceptionHandling>
