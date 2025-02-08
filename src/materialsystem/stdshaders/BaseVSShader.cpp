@@ -872,7 +872,7 @@ void CBaseVSShader::DrawFlashlight_dx90( IMaterialVar** params, IShaderDynamicAP
 			// Need a 3.0 vs here?
 
 			DECLARE_STATIC_VERTEX_SHADER( vertexlitgeneric_flashlight_vs20 );
-			SET_STATIC_VERTEX_SHADER_COMBO( TEETH, vars.m_bTeeth );
+			//SET_STATIC_VERTEX_SHADER_COMBO( TEETH, vars.m_bTeeth );
 			SET_STATIC_VERTEX_SHADER( vertexlitgeneric_flashlight_vs20 );
 
 			unsigned int flags = VERTEX_POSITION | VERTEX_NORMAL;
@@ -1051,7 +1051,7 @@ void CBaseVSShader::DrawFlashlight_dx90( IMaterialVar** params, IShaderDynamicAP
 		else
 		{
 			DECLARE_DYNAMIC_VERTEX_SHADER( vertexlitgeneric_flashlight_vs20 );
-			SET_DYNAMIC_VERTEX_SHADER_COMBO( SKINNING, pShaderAPI->GetCurrentNumBones() > 0 );
+			//SET_DYNAMIC_VERTEX_SHADER_COMBO( SKINNING, pShaderAPI->GetCurrentNumBones() > 0 );
 			SET_DYNAMIC_VERTEX_SHADER( vertexlitgeneric_flashlight_vs20 );
 
 			if( vars.m_bTeeth )

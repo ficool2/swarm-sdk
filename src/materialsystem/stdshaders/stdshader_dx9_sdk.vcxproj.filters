@@ -7,9 +7,6 @@
     <Filter Include="Source Files">
       <UniqueIdentifier>{71042d72-6a00-40ef-8185-c606e8ef0793}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Link Libraries">
-      <UniqueIdentifier>{00f757db-74f7-462e-9882-1b9a31814817}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files">
       <UniqueIdentifier>{4951a1e1-a148-443d-a879-a9b46676922d}</UniqueIdentifier>
     </Filter>
@@ -24,6 +21,9 @@
     </Filter>
     <Filter Include="Shader Source\psh">
       <UniqueIdentifier>{7ddd35dc-16c5-4646-8b03-117701ee1d9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Link Libraries">
+      <UniqueIdentifier>{00f757db-74f7-462e-9882-1b9a31814817}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -280,28 +280,43 @@
     <ClCompile Include="worldvertextransition.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BaseVSShader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spritecard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="volume_clouds_helper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vertexlitgeneric_dx9_helper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="phong_dx9_helper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\..\dx9sdk\lib\d3dx9.lib">
-      <Filter>Link Libraries</Filter>
+      <Filter>Header Files\Link Libraries</Filter>
     </Library>
     <Library Include="..\..\lib\public\interfaces.lib">
-      <Filter>Link Libraries</Filter>
+      <Filter>Header Files\Link Libraries</Filter>
     </Library>
     <Library Include="..\..\lib\public\mathlib.lib">
-      <Filter>Link Libraries</Filter>
+      <Filter>Header Files\Link Libraries</Filter>
     </Library>
     <Library Include="..\..\lib\public\shaderlib.lib">
-      <Filter>Link Libraries</Filter>
+      <Filter>Header Files\Link Libraries</Filter>
     </Library>
     <Library Include="..\..\lib\public\tier0.lib">
-      <Filter>Link Libraries</Filter>
+      <Filter>Header Files\Link Libraries</Filter>
     </Library>
     <Library Include="..\..\lib\public\tier1.lib">
-      <Filter>Link Libraries</Filter>
+      <Filter>Header Files\Link Libraries</Filter>
     </Library>
     <Library Include="..\..\lib\public\vstdlib.lib">
-      <Filter>Link Libraries</Filter>
+      <Filter>Header Files\Link Libraries</Filter>
     </Library>
   </ItemGroup>
   <ItemGroup>

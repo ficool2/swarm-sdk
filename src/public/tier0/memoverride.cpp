@@ -75,6 +75,12 @@ inline void *ReallocUnattributed( void *pMem, size_t nSize )
 // this magic only works under win32
 // under linux this malloc() overrides the libc malloc() and so we
 // end up in a recursion (as MemAlloc_Alloc() calls malloc)
+#if _MSC_VER >= 1900
+#define CRTNOEXCEPT noexcept
+#else
+#define CRTNOEXCEPT
+#endif
+
 #if _MSC_VER >= 1400
 #ifndef _CRTNOALIAS
 #define _CRTNOALIAS
@@ -130,27 +136,27 @@ void* __cdecl _malloc_base( size_t nSize )
 	return AllocUnattributed( nSize );
 }
 #else
-void *_malloc_base( size_t nSize )
+	_CRTRESTRICT void *_malloc_base( size_t nSize )
 {
 	return AllocUnattributed( nSize );
 }
 #endif
 
-void *_calloc_base( size_t nSize )
+	_CRTRESTRICT void *_calloc_base( size_t nCount, size_t nSize )
 {
-	void *pMem = AllocUnattributed( nSize );
+	void *pMem = AllocUnattributed( nCount * nSize );
 	memset(pMem, 0, nSize);
 	return pMem;
 }
 
-void *_realloc_base( void *pMem, size_t nSize )
+_CRTRESTRICT void *_realloc_base( void *pMem, size_t nSize )
 {
 	return ReallocUnattributed( pMem, nSize );
 }
 
-void *_recalloc_base( void *pMem, size_t nSize )
+_CRTRESTRICT void *_recalloc_base( void *pMem, size_t nCount, size_t nSize )
 {
-	void *pMemOut = ReallocUnattributed( pMem, nSize );
+	void *pMemOut = ReallocUnattributed( pMem, nCount * nSize );
 	memset(pMemOut, 0, nSize);
 	return pMemOut;
 }
@@ -178,7 +184,7 @@ void * __cdecl _malloc_crt(size_t size)
 
 void * __cdecl _calloc_crt(size_t count, size_t size)
 {
-	return _calloc_base( count * size );
+	return _calloc_base( count, size );
 }
 
 void * __cdecl _realloc_crt(void *ptr, size_t size)
@@ -188,7 +194,7 @@ void * __cdecl _realloc_crt(void *ptr, size_t size)
 
 void * __cdecl _recalloc_crt(void *ptr, size_t count, size_t size)
 {
-	return _recalloc_base( ptr, size * count );
+	return _recalloc_base( ptr, count, size );
 }
 
 ALLOC_CALL void * __cdecl _recalloc ( void * memblock, size_t count, size_t size )
@@ -198,7 +204,7 @@ ALLOC_CALL void * __cdecl _recalloc ( void * memblock, size_t count, size_t size
 	return pMem;
 }
 
-size_t _msize_base( void *pMem )
+size_t _msize_base( void *pMem ) CRTNOEXCEPT
 {
 	return g_pMemAlloc->GetSize(pMem);
 }

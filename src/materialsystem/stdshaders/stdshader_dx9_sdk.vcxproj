@@ -52,6 +52,12 @@
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</GenerateManifest>
     <PostBuildEventUseInBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</PostBuildEventUseInBuild>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <PreBuildEvent>
       <Command>
@@ -98,7 +104,7 @@
       <Culture>0x0409</Culture>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>version.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>legacy_stdio_definitions.lib;version.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ShowProgress>NotSet</ShowProgress>
       <OutputFile>$(OutDir)game_shader_dx9.dll</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -177,7 +183,7 @@
       <Culture>0x0409</Culture>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>version.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>legacy_stdio_definitions.lib;version.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ShowProgress>NotSet</ShowProgress>
       <OutputFile>$(OutDir)game_shader_dx9.dll</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -1330,6 +1336,7 @@
   <ItemGroup>
     <ClCompile Include="aftershock.cpp" />
     <ClCompile Include="aftershock_helper.cpp" />
+    <ClCompile Include="BaseVSShader.cpp" />
     <ClCompile Include="Bloom.cpp" />
     <ClCompile Include="BlurFilterX.cpp" />
     <ClCompile Include="BlurFilterY.cpp" />
@@ -1396,6 +1403,7 @@
     <ClCompile Include="particlelitgeneric_dx9.cpp" />
     <ClCompile Include="particlelitgeneric_dx9_helper.cpp" />
     <ClCompile Include="particlesphere_dx9.cpp" />
+    <ClCompile Include="phong_dx9_helper.cpp" />
     <ClCompile Include="projected.cpp" />
     <ClCompile Include="projected_dx9_helper.cpp" />
     <ClCompile Include="prototype.cpp" />
@@ -1406,9 +1414,12 @@
     <ClCompile Include="sample4x4_blend.cpp" />
     <ClCompile Include="screenspace_general.cpp" />
     <ClCompile Include="shadow.cpp" />
+    <ClCompile Include="spritecard.cpp" />
     <ClCompile Include="unlitgeneric_dx9.cpp" />
     <ClCompile Include="vertexlitgeneric_dx9.cpp" />
+    <ClCompile Include="vertexlitgeneric_dx9_helper.cpp" />
     <ClCompile Include="volume_clouds.cpp" />
+    <ClCompile Include="volume_clouds_helper.cpp" />
     <ClCompile Include="wireframe_dx9.cpp" />
     <ClCompile Include="worldvertextransition.cpp" />
   </ItemGroup>

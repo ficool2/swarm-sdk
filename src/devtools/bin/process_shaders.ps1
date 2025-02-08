@@ -6,7 +6,7 @@ param (
     [Parameter(Mandatory=$false)][System.UInt32]$Threads
 )
 
-if ($Version -notin @("20b", "30", "40", "41", "50", "51")) {
+if ($Version -notin @("20", "20b", "30", "40", "41", "50", "51")) {
 	return
 }
 
