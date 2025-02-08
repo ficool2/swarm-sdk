@@ -10,14 +10,11 @@
     <ClCompile Include="BaseVSShader.cpp">
       <Filter>Shaders</Filter>
     </ClCompile>
-    <ClCompile Include="vertexlitgeneric_dx9_helper.cpp">
+    <ClCompile Include="infected_dx9.cpp">
       <Filter>Shaders</Filter>
     </ClCompile>
-    <ClCompile Include="phong_dx9_helper.cpp">
-      <Filter>Shaders</Filter>
-    </ClCompile>
-    <ClCompile Include="test_dx9.cpp">
-      <Filter>Shaders</Filter>
+    <ClCompile Include="patch.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -57,12 +54,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseVSShader.h">
-      <Filter>Shaders</Filter>
-    </ClInclude>
-    <ClInclude Include="vertexlitgeneric_dx9_helper.h">
-      <Filter>Shaders</Filter>
-    </ClInclude>
-    <ClInclude Include="phong_dx9_helper.h">
       <Filter>Shaders</Filter>
     </ClInclude>
   </ItemGroup>

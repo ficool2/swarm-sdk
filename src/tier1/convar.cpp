@@ -6,17 +6,12 @@ ICvar* g_pCVar = nullptr;
 
 void ConVar_Register( int nCVarFlag, IConCommandBaseAccessor* pAccessor )
 {
-	STUB
+	//STUB
 }
 
 void ConVar_Unregister( )
 {
-	STUB
-}
-
-ConVarRef::ConVarRef( const char *pName, bool bIgnoreMissing )
-{
-	STUB
+	//STUB
 }
 
 ConCommandBase::ConCommandBase()
@@ -235,5 +230,28 @@ void ConVar::Create( const char *pName, const char *pDefaultValue, int flags,
 	m_pszHelpString = pHelpString ? pHelpString : "";
 	m_nFlags = flags;
 
+	m_pParent = this;
+
 	// TODO
+}
+
+class CEmptyConVar : public ConVar
+{
+public:
+	CEmptyConVar() : ConVar( "", "0" ) {}
+	// Used for optimal read access
+	virtual void SetValue( const char *pValue ) {}
+	virtual void SetValue( float flValue ) {}
+	virtual void SetValue( int nValue ) {}
+	virtual const char *GetName( void ) const { return ""; }
+	virtual bool IsFlagSet( int nFlags ) const { return false; }
+};
+
+static CEmptyConVar s_EmptyConVar;
+
+ConVarRef::ConVarRef( const char *pName, bool bIgnoreMissing )
+{
+	// TODO
+	m_pConVar = &s_EmptyConVar;
+	m_pConVarState = static_cast<ConVar*>(m_pConVar);
 }
