@@ -76,6 +76,9 @@ inline void *ReallocUnattributed( void *pMem, size_t nSize )
 // under linux this malloc() overrides the libc malloc() and so we
 // end up in a recursion (as MemAlloc_Alloc() calls malloc)
 #if _MSC_VER >= 1400
+#ifndef _CRTNOALIAS
+#define _CRTNOALIAS
+#endif
 #define ALLOC_CALL _CRTNOALIAS _CRTRESTRICT 
 #define FREE_CALL _CRTNOALIAS 
 #else
@@ -575,7 +578,7 @@ ALLOC_CALL void * __cdecl _aligned_offset_recalloc( void * memblock, size_t coun
 //-----------------------------------------------------------------------------
 // Override some the _CRT debugging allocation methods in MSVC
 //-----------------------------------------------------------------------------
-#ifdef _WIN32
+#if defined( _WIN32 ) && _MSC_VER < 1900
 
 extern "C"
 {
@@ -1159,6 +1162,7 @@ SIZE_T WINAPI XMemSize( PVOID pAddress, DWORD dwAllocAttributes )
 }
 #endif // _X360
 
+#if _MSC_VER < 1900
 #define MAX_LANG_LEN        64  /* MAX language name length */
 #define MAX_CTRY_LEN        64  /* MAX country name length */
 #define MAX_MODIFIER_LEN    0   /* MAX modifier name length - n/a */
@@ -1317,7 +1321,7 @@ class _LocaleUpdate
         return &localeinfo;
     }
 };
-
+#endif
 
 #pragma warning(push)
 #pragma warning(disable: 4483)
